@@ -2,7 +2,7 @@
 
 class Grafo {
 
-	private $lista_de_adjacencia = array();
+	public $lista_de_adjacencia = array();
 	private $dados = array();
 
 	public function __construct($dados) {
@@ -13,27 +13,40 @@ class Grafo {
         
         foreach ($this->dados['arestas'] as $value) {
 
-        	if (! array_key_exists($value[0], $this->lista_de_adjacencia) )
+        	if (! array_key_exists($value[0], $this->lista_de_adjacencia) ) // verifica se o vertice atual do loop, está presente na lista de adjacencia
     		{
-    			$this->lista_de_adjacencia[$value[0]] = array();
+    			$this->lista_de_adjacencia[$value[0]] = array(); // se nao estiver, adiono ele e falo que ele também será um array
     		}
     		
 
-        	if ($this->dados['peso'] == 'true') {
+        	if ($this->dados['peso'] == 'true') { //verifico se o grafo terá peso
 
-        		array_push( $this->lista_de_adjacencia[$value[0]], array( $value[1], intval($value[2]) ) );
+        		array_push( $this->lista_de_adjacencia[$value[0]], array( $value[1], intval($value[2]) ) ); // adiciono como ao vertice atual do loop, o vizinho e seu peso
 
-        		if ($this->dados['direcionado'] == 'false') {
+        		if ($this->dados['direcionado'] == 'false') { // verifico so o grafo será um digrafo
+        			$this->lista_de_adjacencia[$value[1]] = array();
+        			array_push( $this->lista_de_adjacencia[$value[1]], array($value[0], intval($value[2]) ) ); // se nao for, adiciono o vertice atual do loop a lista de vizinho, por exemplo: veja abaixo:
 
-        			array_push( $this->lista_de_adjacencia[$value[1]], array($value[0], intval($value[2]) ) );
+        			/* vertice atual: 0 
+					   lista de vizinhos: 0(vertice atual) = [1(vertice vizinho), 10 (peso da aresta)]
+					   se nao for direcionado adiono também, o vertice atual como vizinho
+					   lista de vizinhos: 1(vertice vizinho) = [0(vertice atual), 10 (peso da aresta)]
+        			*/
+
 	        	}
         	}
         	else
         	{
-        		array_push( $this->lista_de_adjacencia[$value[0]], array($value[1], 1 ) );
+        		if (! array_key_exists($value[1], $this->lista_de_adjacencia) ) // verifica se o vertice atual do loop, está presente na lista de adjacencia
+	    		{
+	    			$this->lista_de_adjacencia[$value[1]] = array(); // se nao estiver, adiono ele e falo que ele também será um array
+	    		}
+
+        		array_push( $this->lista_de_adjacencia[$value[0]], array($value[1], 1 ) ); // se nao tiver peso, adiciono o peso 1 para a aresta
 
         		if ($this->dados['direcionado'] == 'false') {
-        			array_push( $this->lista_de_adjacencia[$value[1]], array($value[0], 1 ) );
+        			$this->lista_de_adjacencia[$value[1]] = array();
+        			array_push( $this->lista_de_adjacencia[$value[1]], array($value[0], 1 ) ); // se nao for direcionado faço o mesmo procedimento acima, porémm com peso 1
 	        	}
         	}
     	}
@@ -41,14 +54,14 @@ class Grafo {
 
     public function distancia ($caminho) {
 
-    	$vertice_atual = array_shift($caminho);
+    	$vertice_atual = array_shift($caminho); // vertice atual é igual o primeiro elemento do vetor caminho
     	$distancia = 0;
 
-    	while (!empty($caminho)){
+    	while (!empty($caminho)){ // enquanto o vetor caminho não estiver vazio
 
-    		foreach ($this->lista_de_adjacencia[$vertice_atual] as $value) {
+    		foreach ($this->lista_de_adjacencia[$vertice_atual] as $value) { // percorro a lista de vizinhos do vertice atual
     			
-    			if ($caminho[0] == $value[0]) {
+    			if ($caminho[0] == $value[0]) { 
     				$distancia += $value[1];
     				$vertice_atual = array_shift($caminho);
     				break;
@@ -59,7 +72,7 @@ class Grafo {
     	return $distancia;
     }
 	
-	public function bfs ($origem, $destino)	{
+	public function bfs ($origem, $destino)	{ //busca em largura
 
 		$vertice_atual = $origem;
 		$fila = array();
@@ -105,7 +118,7 @@ class Grafo {
 		return $respostas;
 	}
 
-	public function dfs ($origem, $destino) {
+	public function dfs ($origem, $destino) { // busca em profundidade
 
 		$vertice_atual = $origem;
 		$fila = array();
@@ -151,7 +164,7 @@ class Grafo {
 		return $respostas;
 	}
 	
-	public function menor_caminho ($origem, $destino)
+	public function menor_caminho ($origem, $destino) // dijkstra - menor caminho
 	{
 		$vertice_atual = array();
 		$distancia = array();
@@ -221,3 +234,4 @@ class Grafo {
 	}
 
 }
+
