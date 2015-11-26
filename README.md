@@ -2,6 +2,13 @@
 Trabalho de Teoria da Computação - Prof: Fernando Braz
 Pitágoras Betim - MG
 
+####Integrantes:
+
+* Anderson
+* Ivan Eustáquio
+* Gustavo Conceição
+* Renato Alves
+
 ##1. Introdução ao Documento
 
 Neste trabalho iremos mostrar uma Biblioteca de Grafos, onde pegamos como entrada um .txt de entrada
@@ -42,19 +49,12 @@ corrigimos erros e verificamos se estava realmente funcional, e subimos ele para
 
 ##1.6. Organização do Trabalho
 
-###Nosso trabalho está organizado da seguinte maneira:
+####Nosso trabalho está organizado da seguinte maneira:
 
-*Arquivos - Algoritmo de tramento dos dos arquivos.
-*Entrada - .txt onde entramos com as características do grafo.
-*Grafo - Algoritmo que contem as funçoes para a execução do menor caminho, distãncia, largura e profundidade.
-*index - Algoritmo para mostramos na tela a saída do algoritmo com uma interface grafica.
-*Main - Algoritmo principal que ultiliza as funçoes dos outro para gerar nossa sáida.
-*README - Markdown.
-
-
-##1.7. Glossário
-
-Termos:
-Algoritmo de Busca em Profundidade (Dfs)
-Algotirmo de Busca em Largura (Bfs)
+* Arquivos - Algoritmo de tramento dos dos arquivos.
+* Entrada - .txt onde entramos com as características do grafo.
+* Grafo - Algoritmo que contem as funçoes para a execução do menor caminho, distãncia, largura e profundidade.
+* index - Algoritmo para mostramos na tela a saída do algoritmo com uma interface grafica.
+* Main - Algoritmo principal que ultiliza as funçoes dos outro para gerar nossa sáida.
+* README - Markdown.
 
