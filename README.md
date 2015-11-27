@@ -1,60 +1,50 @@
 # Biblioteca de Grafos
-Trabalho de Teoria da Computação - Prof: Fernando Braz
+Trabalho de Teoria da Computação - Professor: Fernando Braz
 Pitágoras Betim - MG
 
-####Integrantes:
-
-* Anderson
-* Ivan Eustáquio
+* Anderson Alves 
 * Gustavo Conceição
+* Ivan Eustáquio
 * Renato Alves
 
 ##1. Introdução ao Documento
 
-Neste trabalho iremos mostrar uma Biblioteca de Grafos, onde pegamos como entrada um .txt de entrada
-e fazemos uma leitura de des arquivos baseados em seus vértices e arestas, e retornamos mostrando em tela
-a distância e o menor caminho, e ultilizado os algoritmos de largura e profundidade. (bfs) - (dfs).
-
+Neste trabalho iremos mostrar uma Biblioteca de Grafos, onde pegamos como entrada um arquivo.txt de entrada e fazemos uma leitura destes arquivos baseados em seus vértices, arestas e comandos, e retornamos mostrando em tela a distância, o menor caminho, utilizando os algoritmos de largura(bfs),  profundidade(dfs)  e Dijkstra.
 
 ##1.1. Tema
 
-Montar uma Biblioteca de Grafos, onde possamos ler qualquer grafo e determinar caractrísticas distinhas daquele 
-determinado grafo.
+Montar uma Biblioteca de Grafos, onde possamos ler qualquer grafo partindo de um padrão definido junto ao professor em sala de aula e determinar características distintas daquele determinado grafo.
 
 ##1.2. Objetivo do Projeto
 
 Encontrar a distancia, menor caminho, largura e profundidade de um grafo qualquer usando como entrada um arquivo txt.
-
-
 ##1.3. Delimitação do Problema
 
-Nossa ideia específica é executar os algoritmos de largura e profundidade em um grafo, e determinar
-pontos e características específicas daquele grafo baseadas nesses algoritos, como menor caminho
-de um ponto até o outro.
+Nossa ideia específica é executar os algoritmos de largura e profundidade em um grafo, e determinar pontos e características específicas daquele grafo baseadas nesses algoritmos, como menor caminho de um ponto até o outro.
 
 
 ##1.4. Justificativa da Escolha do Tema
 
-Escolhemos este tema devido a um trabalho acadêmico onde tinhamos que desenvolver um biblioteca de grafos,
-de uma matéria de Teoria da Computação, onde tínhamos determinadas exigências e algoritmos a executar
-para o término do trabalho.
-
+Escolhemos este tema devido a um trabalho acadêmico onde tínhamos que desenvolver uma biblioteca de grafos, de uma matéria de Teoria da Computação, onde tínhamos determinadas exigências impostas pelo professor e algoritmos a executar para o término do trabalho.
 
 ##1.5. Método de Trabalho
 
-Nos reunimos para pensar no corpo do código e em qual linguagem fazê-lo, decidimos fazer em PHP, dividimos as tarefas
-e após cada um fazer a sua parte nos reunimos novamente, e juntamos tudo, colocamos todas as partes em concordância,
-corrigimos erros e verificamos se estava realmente funcional, e subimos ele para o Github já completo.
+### A linguagem utilizada foi PHP
 
+* As ferramentas utilizadas para o desenvolvimento do trabalho foram:
+
+* Sublime text 3 
+* Easy php
+* git
+* github
 
 ##1.6. Organização do Trabalho
 
-####Nosso trabalho está organizado da seguinte maneira:
+###Nosso algoritmo está organizado da seguinte maneira:
 
-* Arquivos - Algoritmo de tramento dos dos arquivos.
-* Entrada - .txt onde entramos com as características do grafo.
-* Grafo - Algoritmo que contem as funçoes para a execução do menor caminho, distãncia, largura e profundidade.
-* index - Algoritmo para mostramos na tela a saída do algoritmo com uma interface grafica.
-* Main - Algoritmo principal que ultiliza as funçoes dos outro para gerar nossa sáida.
-* README - Markdown.
-
+* Arquivos - Algoritmo de tratamento do arquivo.
+* Entrada -.txt onde entramos com as características do grafo.
+* Grafo - Algoritmo que contem as funções para a execução do menor caminho distância, largura e profundidade.
+* index - Algoritmo para mostrar na tela a saída do algoritmo com uma interface gráfica.
+* Main - Algoritmo principal que utiliza as funções dos outro para gerar nossa saída.
+* README-documentação dos algoritmos (Markdown).
